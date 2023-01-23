@@ -288,9 +288,9 @@ h1{
     outline: none;                              /*elimina el borde automatico que contiene la celda de cuando se ingresa la entrada*/
 }
 
-#imagenYtextoNoEncontrado{
-    /*visibility:hidden;*/
-}
+/*#imagenYtextoNoEncontrado{
+    visibility:hidden;
+}*/
  
 .imagenBusqueda{
     /* Muñeco */
