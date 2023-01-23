@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang ="es" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Encriptador || Desencriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="01_encriptar_desencriptar.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <div class="logoAlura">
+                <img src="Imagenes/Logo.png" alt="Logo de Alura">
+            </div>
+
+            <h1 class="titulo">Encriptador y desencriptador de texto</h1>
+            <h1 class="titulo2">Challenge  ONE  Principiante en programación</h1>
+            <h1>ORACLE + Alura Latam</h1>
+
+            <section id="section Left">
+                <form>
+                    <div>
+                        <label for="ingresoTexto"></label>
+                        <textarea name="ingresoTexto" class="cuadroIngresarTexto" placeholder="Ingrese el texto aquí" required autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="aclaracion">
+                        <img class="imagenAclaracion" src="Imagenes/bi_exclamation-circle-fill.png" alt="simboloExclamacion">
+                        <p class="textoAclaracion">Solo letras minúsculas y sin acentos</p>
+                    </div>
+                </form>
+
+                <div id="botones_EncDesenc">
+                    <button class="botonEncriptar">
+                        <p class="textoBotonEncriptar">Encripta</p>
+                    </button>
+                    <button class="botonDesencriptar">
+                        <p class="textoBotonDesencriptar">Desencripta</p>
+                    </button>
+                </div>
+            </section>
+
+            <section>
+                <div id="cuadroResultado">
+                    
+                    <label for="texto_resultado"></label>
+                    <textarea name="texto_resultado" class="textoResultado" id="resultado" cols="30" rows="10" autocomplete="off" readonly></textarea>
+                    
+                    <div id="imagenYtextoNoEncontrado">
+                        <img class="imagenBusqueda" src="Imagenes/Muñeco.png" alt="Imagen de búsqueda">
+
+                        <div id="cuadroMensajeNoEncontrado">
+                            <p class="texto1NoEncontrado">Ningun mensaje fue encontrado</p>
+                            <p class="texto2NoEncontrado">Ingrese  en el cuadro de la izquierda el texto que desee encriptar o desencriptar.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <button class="botonCopiar">
+                           <p class="textoCotonCopiar">Copia el texto</p>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <a href="https://github.com/archersmack?tab=repositories">
+                <img src="Imagenes/github-mark.svg" width="30" height="30" class="logoGitHub" alt="GitHub mark">
+            </a>
+            <a href="http://www.linkedin.com/in/germ%C3%A1n-dario-hern%C3%A1ndez-leal-93a176206">
+                <img src="Imagenes/linkedin.svg" width="27" height="26" class="logoLinkedIn" alt="Linkedin icon">
+            </a>
+            <p class="textoAutor">&copy Copyright by G_D Hernández Leal</p>
+        </footer>
+
+    </body>
+       
+    <script>
+        /* /////////////////// FUNCIONES ////////////// */
+        function borrarImagenTexto() {
+            document.getElementById("imagenYtextoNoEncontrado").style.visibility = "hidden";    //tambien se puede usar --> document.getElementById("imagenYtextoNoEncontrado").style.display = "none";
+        }
+
+        function mostrarImagenTexto() {
+            document.getElementById("imagenYtextoNoEncontrado").style.visibility = "visible";    //tambien se puede usar --> document.getElementById("imagenYtextoNoEncontrado").style.display = "none";
+        }
+
+        function encriptar(){
+            
+            if (texto.value == "") {
+                mostrarImagenTexto();
+            }
+            else{
+                borrarImagenTexto();
+                botonCopiar.style.display = "block"     //Activa el boton COPIAR
+                var textoEncriptado = texto.value.toLowerCase();
+
+                for (var posicion = 0; posicion < vocales.length; posicion++) {
+                    textoEncriptado = textoEncriptado.replaceAll(vocales[posicion],vocalesEncriptadas[posicion]);
+                }
+                                                                                                                /*El anterior FOR representa las siguientes lineas:
+                                                                                                                textoEncriptado = textoEncriptado.replaceAll(vocales[0],vocalesEncriptadas[0]);
+                                                                                                                textoEncriptado = textoEncriptado.replaceAll(vocales[1],vocalesEncriptadas[1]);
+                                                                                                                textoEncriptado = textoEncriptado.replaceAll(vocales[2],vocalesEncriptadas[2]);
+                                                                                                                textoEncriptado = textoEncriptado.replaceAll(vocales[3],vocalesEncriptadas[3]);
+                                                                                                                textoEncriptado = textoEncriptado.replaceAll(vocales[4],vocalesEncriptadas[4]);*/
+                
+                cuadroResultado.innerHTML = textoEncriptado;            /*OTRA OPCION cuadroResultado.value = textoEncriptado;*/        //OTRA OPCION    document.getElementById("resultado").innerHTML = textoEncriptado;
+                texto.value = "";   // Reinicia la celda input, la deja vacia
+                //document.getElementById("imagenYtextoNoEncontrado").style.visibility = "visible";
+                //document.querySelector(".textoResultado").style.display = "block";
+                return textoEncriptado;
+            }
+        }
+
+        function DESencriptar(textoEncriptado){
+            if (texto.value == "") {
+                mostrarImagenTexto();
+            }
+            else{
+                borrarImagenTexto()
+                botonCopiar.style.display = "block"     //Activa el boton COPIAR
+                var textoDESencriptado = texto.value.toLowerCase();     //.toLowerCase() permite cambiar a minusculas el contenido de la variable
+
+                for (var posicion = 0; posicion < vocales.length; posicion++) {
+                    textoDESencriptado = textoDESencriptado.replaceAll(vocalesEncriptadas[posicion],vocales[posicion]);
+                }
+
+                cuadroResultado.innerHTML = textoDESencriptado;     // Agrega resultado a la celda de RESULTADO
+                texto.value = "";   // Reinicia la celda donde se ingresó el texto, la deja vacia
+                return textoDESencriptado;
+            }
+        }
+
+        function copiarResultado () {
+            let copiar = cuadroResultado;       // Se asigna variable al boton Copiar
+            copiar.select();                   
+            document.execCommand("copy");       // Se copia el contenido y queda almacenado en la variable copiar
+            //texto.innerHTML = copiar;         // Se toma el contenido de la variable COPIAR y se envia como contenido al cuadro donde se ingresa texto
+            //cuadroResultado.value = "";
+        }
+
+        /* /////////////////// CUERPO DEL ALGORITMO ////////////////// */
+        
+        var texto = document.querySelector(".cuadroIngresarTexto");
+        var botonUno = document.querySelector(".botonEncriptar");
+        var botonDos = document.querySelector(".botonDesencriptar");
+        var cuadroResultado = document.querySelector(".textoResultado");
+        var botonCopiar = document.querySelector(".botonCopiar");
+
+        var vocales = ["e","i","a","o","u"];
+        var vocalesEncriptadas = ["enter", "imes", "ai", "ober", "ufat"];
+
+        botonUno.onclick = encriptar;
+        botonDos.onclick = DESencriptar;
+        botonCopiar.onclick = botonCopiar.addEventListener("click",copiarResultado);
+
+    </script> 
+    
+</html>
