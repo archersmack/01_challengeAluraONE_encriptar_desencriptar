@@ -1,3 +1,4 @@
+/********************** PALETA DE COLORES *****************/
 /* background: #F3F5FC;         Light blue/light-blue-100 */
 /* background: #E9ECF8;         Light blue/light-blue-300 */
 /* background: #609ED4;         Dark blue/dark-blue-100 */
@@ -6,93 +7,88 @@
 /* background: #072B61;         Dark blue/dark-blue-400 */
 /* background: #052051;         Dark blue/dark-blue-500 */
 
-
 body{
     font-family: 'Inter', sans-serif;
-    position: fixed;
-    width: 1280px /*1366px*/;
-    height: 720px /*768px */;
+    font-family: 'Indie Flower', cursive;
+}
+
+.bodyContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 main{
-    /* Encriptador - 1 Desktop */
     height: 95%;
     background: #E9ECF8;        /* Light blue/light-blue-100 */
 }
 
-.logoAlura{
-    /* ************** LOGO ************** */
+.containerPrincipal{
+    display: flex;
+}
+/********************************** LEFT SECTION ***********************************************/
+.sectionLeft{
+    width: 65%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-
-    position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 40px;
-    top: 40px;
 }
 
+/*************** ENCABEZADO ***************/
+.encabezado{
+    display: flex;
+    height: 20%;
+    align-items: center;
+}
+.logoAlura{
+    width: 90px;
+}
+.tituloEncabezado{
+    flex-grow: 3;
+}
 h1{
+    font-family: 'Inter', sans-serif;
     text-align: left;
     font-size: 12px;
-    line-height: 16px;
-    position: relative;
-    top: 42px;
-    left: 125px;
-    font-style: normal;
-    font-family: 'Inter', sans-serif;
+    line-height: 15px;  /*Determina el espaciado entre las líneas*/
     color: #0A3871;
 }
-
-.titulo{
+.titulo1{
     font-weight: bold;
     font-size: 18px;
 }
-
-.titulo2{
+.titulo2{    
+    font-family: 'Inter', sans-serif;
     color: rgb(235, 138, 52);
     margin-top: 2px;
 }
 
-#sectionLeft{
-    background: #609ED4;
-    width: 65%;
-    height: 0.2%;
+/******* CUADRO INGRESAR TEXTO *********/
+.containerIngresoTexto{
+    flex-grow: 2;
+    text-align: center;
+    height: 62%;
 }
-
 .cuadroIngresarTexto{
-    /* **************Ingrese el texto aqui************** */
-    position: absolute;
-    width: 40%;
-    height: 380px;
-    left: 13%;
-    top: 150px;
-    padding: 0 15px 0 15px;
+    width: 65%;
+    height: 90%;
 
     font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 400;       /*Grosor*/
     font-size: 32px;
     line-height: 150%;      /* identical to box height, or 48px */
-    letter-spacing: 0em;
     text-align: left;
-    color: #356EA9;         /* Dark blue/dark-blue-300 */
+    color: #356EA9;       /* Dark blue/dark-blue-300 */
 
     border: none;
     border-radius: 10px;
     background: #E9ECF8;
-    outline: none;                              /*elimina el borde automatico que contiene la celda de cuando se ingresa la entrada*/
+    outline: none;          /*elimina el borde automatico que contiene la celda de cuando se ingresa la entrada*/
     transition: 0.2s;
     box-shadow: -10px -10px 20px -4px rgba(7, 43, 97, 0.23);
 }
-
 ::placeholder{
     color: rgba(235, 138, 52,0.7);
 }
-
 .cuadroIngresarTexto:focus{
     border: 3px hidden;
     border-radius: 10px;
@@ -102,161 +98,97 @@ h1{
     box-shadow: 10px 14px 12px 5px rgba(7, 43, 97, 0.38);
 }
 
+/********** ACLARACION ************/
 .aclaracion{
-    /* Frame 1 */
-    display: flex;      /* Auto layout */
+    display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-
-    position: absolute;
-    width: 229px;
-    height: 18px;
-    left: 13%;
-    top: 570px;    
+    height: 3%;
 }
-
 .imagenAclaracion{
     width: 16px;
     height: 16px;
-    flex: none;         /* Inside auto layout */
-    order: 0;
-    flex-grow: 0;
+    margin-left: 5%;
 }
-
 .textoAclaracion{
     width: 205px;
     height: 18px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;  /* identical to box height, or 18px */
-   
     color: #495057;   /* Gray/gray-400 */
     opacity: 0.8;
-
-    flex: none;     /* Inside auto layout */
-    order: 1;
-    flex-grow: 0;
 }
 
-#botones_EncDesenc{
-    /* Frame 3 */
-    display: flex;       /* Auto layout */
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-
-    position: absolute;
-    width: 40%;
-    height: 67px;
-    left: 11%;
-    top: 600px;
-}
-
-.botonEncriptar{
-    /* ****************Button************** */
-    display: flex;  /* Auto layout */
+/***************** BUTTONS ***************/
+.botones_EncDesenc{
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 24px;
-    gap: 8px;
-    /*width: 328px;
-    height: 67px;*/
+    gap: 24px;
+    height: 15%;
+}
 
+.botonEncriptar{
+    padding: 2%;  
+    width: 35%;
     background: #0A3871;    /* Dark blue/dark-blue-300 */
     border-radius: 24px;
     border: 1px solid #0A3871;
-
-    flex:none;      /* Inside auto layout */
-    order: 0;
-    flex-grow: 0;
-
-    width: 280px;
-    height: 19px;
 }
-
 .botonEncriptar:hover{
     box-shadow: 1px 1px 2px 1px rgba(10, 56, 113, 0.74);
     background: #235796;    /* Dark blue/dark-blue-300 */
     border-radius: 24px;
     border: 1px solid #235796;
 }
-
 .textoBotonEncriptar{
     font-family: 'Inter';
-    /*font-style: normal;*/
     font-weight: 400;
     font-size: 20px;
     line-height: 19px;
-    text-align: center;
     color: #FFFFFF;
-
-    flex: none;         /* Inside auto layout */
-    order: 0;
-    flex-grow: 1;
 }
 
 .botonDesencriptar{
-    /* ****************Button************** */
-    box-sizing: border-box;
-
-    display: flex;          /* Auto layout */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    gap: 8px;
-    /*width: 328px;
-    height: 67px;*/
-
+    padding: 2%;
+    width: 35%;
     background: #D8DFE8;        /* Light gray */
     border: 1px solid #0a387172;  /* Dark blue/dark-blue-300 */
     border-radius: 24px;
-
-    flex: none;     /* Inside auto layout */
-    order: 1;
-    flex-grow: 0;
-
-    width: 280px;
-    height: 19px;
 }
-
 .botonDesencriptar:hover{
     box-shadow: 0px 0px 5px 1px rgba(134, 135, 136, 0.28);
     background: #92979c;    /* Dark blue/dark-blue-300 */
     border-radius: 24px;
     border: 1px solid #92979c;
 }
-
 .textoBotonDesencriptar{
     font-family: 'Inter';
-    font-style:normal;
     font-weight:600;
     font-size: 20px;
     line-height: 19px;
-    text-align: center;
-
     color: #0A3871;         /* Dark blue/dark-blue-300 */
+}
 
-    flex: none;     /* Inside auto layout */
-    order: 0;
-    flex-grow: 1;
+/************************************** RIGHT SECTION ***********************************************/
+.sectionRight{
+    width: 35%;
 }
 
 #cuadroResultado{
-    /* Rectangle 1 */
-    position: absolute;
-    width: 350px;
-    height: 85%;
-    left: 70%;
-    top: 40px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 88%;
+    text-align: center;
+    margin: 5% auto;
     background: #FFFFFF;    /* White */
     box-shadow: 0px 20px 30px 5px rgba(7, 43, 97, 0.28);   /* shadow */  /*Dark blue/dark-blue-400 */
     border-radius: 32px;
@@ -267,17 +199,20 @@ h1{
     box-shadow: 0px 20px 32px 5px rgba(235, 138, 52, 0.68);   /* shadow */  /*Dark blue/dark-blue-400 */
 } /*rgb(221, 72, 72)    /*red */ 
 
+.resultadoItem{
+    text-align: center;
+    flex-grow: 3;
+}
 .textoResultado{
-    position: absolute;
     width: 90%;
-    height: 80%x;
-    left: 4%;
-    top: 5px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    margin-top: 10px;
 
-    font-family: 'Inter', sans-serif;
+    font-family: 'Indie Flower', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 150%;      /* identical to box height, or 48px */
     letter-spacing: 0em;
     text-align: center;
@@ -288,38 +223,24 @@ h1{
     outline: none;                              /*elimina el borde automatico que contiene la celda de cuando se ingresa la entrada*/
 }
 
-/*#imagenYtextoNoEncontrado{
-    visibility:hidden;
-}*/
- 
+#imagenYtextoNoEncontrado{
+    text-align: center;
+}
+/*********** Muñeco ****************/
 .imagenBusqueda{
-    /* Muñeco */
-    position: absolute;
-    width: 246px;
-    height: 214px;
-    left: 15%;
-    top: 150px;
-                                                                /*border: 1px solid black;*/
+    width: 80%;
+    height: 60%;
 }
 
 #cuadroMensajeNoEncontrado{
-    /* Frame 5 */
-    display: flex;      /* Auto layout */
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
-
-    position: absolute;
-    width: 336px;
-    height: 122px;
-    left: 5px;  /*A partir de la ubicacion asignada al cuadro de Resultado que comienza despues del 70% del tamaño de la pantalla*/
-    top: 390px;
+    width: 95%;
+    align-items: center;
 }
-
 .texto1NoEncontrado{
-    width: 336px;
-    height: 58px;
+    width: 90%;
+    height: 30%;
 
     font-family: 'Inter';
     font-style: normal;
@@ -328,16 +249,10 @@ h1{
     line-height: 120%;  /* or 29px */
     text-align: center;
     color: #343A40; /* Gray/gray-500 */
-
-    flex: none; /* Inside auto layout */
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
 }
-
 .texto2NoEncontrado{
-    width: 336px;
-    height: 48px;
+    width: 90%;
+    height: 30%;
 
     font-family: 'Inter';
     font-style: normal;
@@ -346,30 +261,16 @@ h1{
     line-height: 150%;  /* or 24px */
     text-align: center;
     color: #495057;     /* Gray/gray-400 */
-
-    flex: none; /* Inside auto layout */
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
 }
 
 .botonCopiar{
-    position: absolute;  /* Auto layout */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 18px;
-    gap: 8px;
-
     background: #356EA9;    /* Dark blue/dark-blue-300 */
     border-radius: 0 0 24px 24px;
     border: 1px solid #356EA9;
 
     width: 100%;
     height: 58px;
-    left: 0px;
-    top: 554px;
-    display: none;
+    display:none;
     
     text-align: center;
     color: #FFFFFF;
@@ -377,22 +278,20 @@ h1{
     font-weight: 600;
     font-size: 20px;
 }
-
 .botonCopiar:hover{
     background: #e9ba11;
     border: 1px solid #e9ba11;
     color: #0a387196;
     font-weight: 900;
 }
-
 .botonCopiar:active{
     box-shadow: 0px 0px 2px 1px rgba(235, 138, 52, 0.38);
 }
 
 footer{
     display: flex;
-    width: 1280px;
     height: 5%;
+    gap: 5px;
     background: #072b61;    /*Dark blue/dark-blue-400 */
 
     justify-content: center;
@@ -404,89 +303,75 @@ footer:hover{
 }
 
 a{
-    display:inline-block;
     text-align: center;
     padding: 2px 6px;
 }
 
 .textoAutor{
-    display:inline-block;
+    flex-grow: 2;
     text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-family: 'indie flower';
+    font-size: 18px;
     font-weight: 550;
     padding:12px 6px;
-    color: #aaadaf;
+    color: #c9cdcf;
 }
 
 .textoAutor:hover{
-    color: #e9ba11;
+    color: #ffc800;
 }
 
-@media only screen and (max-width: 1366px) {
-    body{
-        width: 100%;
-        height: 768px;
+@media only screen and (max-width: 768px) {
+    .bodyContainer{
+        height: auto;
     }
-    footer{
-        width: 100%;
+    .containerPrincipal{
+        flex-direction: column;
+        align-items: center;
     }
-    .cuadroIngresarTexto{
-        height: 430px;
-        left: 13%;
-        top: 140px;
+    .sectionLeft{
+        height: 700px;
+        width: auto;
     }
-    .aclaracion{
-        width: 229px;
-        height: 18px;
-        left: 13%;
-        top: 600px; 
-    }
-    #botones_EncDesenc{
-        height: 67px;
-        left: 13%;
-        top: 630px;
-    }
-    .botonCopiar{
-        height: 58px;
-        left: 0px;
-        top: 595px;
-    }
-}
-
-/*@media only screen and (max-width: 480px) {
-    body{
-        width: 100%;
-        height: 768px;
-    }
-    footer{
-        width: 100%;
+    .encabezado{
+        width: auto;
     }
     .cuadroIngresarTexto{
-        height: 430px;
-        left: 13%;
-        top: 140px;
+        font-size: 18px;
     }
     .aclaracion{
-        width: 229px;
-        height: 18px;
-        left: 13%;
-        top: 600px; 
+        justify-content: center;
     }
-    #botones_EncDesenc{
-        height: 67px;
-        left: 13%;
-        top: 630px;
+    .botones_EncDesenc{
+        flex-direction: column;    
+        gap: 15px;
+    }
+    .botonEncriptar{
+        flex-grow: 1;
+        width: 70%;
+    }
+    .botonDesencriptar{
+        flex-grow: 1;
+        width: 70%;
+    }
+    .sectionRight{
+        height: auto;
+        width: auto;
     }
     #cuadroResultado{
-        width: 50%;
-        height: 85%;
-        left: 70%;
-        top: 40px;
+        height: 500px;
     }
-    .botonCopiar{
-        height: 58px;
-        left: 0px;
-        top: 595px;
+    .resultadoItem{
+        flex-grow: 2;        
     }
-}*/
+    .textoResultado{
+        flex-grow: 2;
+    }
+    #imagenYtextoNoEncontrado{
+        flex-grow: 1;
+    }
+    .imagenBusqueda{
+        width: 150px;
+        height: 150px;
+    }
+}

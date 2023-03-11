@@ -5,37 +5,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title> Encriptador || Desencriptador</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/01_encriptar_desencriptar.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     </head>
 
-    <body>
-        <main>
-            <div class="logoAlura">
-                <img src="Imagenes/Logo.png" alt="Logo de Alura">
-            </div>
+    <body class="bodyContainer">
+        <main class="containerPrincipal">
+            <section class="sectionLeft">
+                <div class="encabezado">    
+                    <div class="logoAlura">
+                        <img src="Imagenes/Logo.png" alt="Logo de Alura">
+                    </div>
 
-            <h1 class="titulo">Encriptador y desencriptador de texto</h1>
-            <h1 class="titulo2">Challenge  ONE  Principiante en programación</h1>
-            <h1>ORACLE + Alura Latam</h1>
-
-            <section id="section Left">
-                <form>
-                    <div>
+                    <div class="tituloEncabezado">
+                        <h1 class="titulo1">Encriptador y desencriptador de texto</h1>
+                        <h1 class="titulo2">Challenge  ONE  Principiante en programación</h1>
+                        <h1>ORACLE + Alura Latam</h1>
+                    </div>
+                </div>
+            
+                <form class="containerIngresoTexto">
                         <label for="ingresoTexto"></label>
                         <textarea name="ingresoTexto" class="cuadroIngresarTexto" placeholder="Ingrese el texto aquí" required autocomplete="off"></textarea>
-                    </div>
-
-                    <div class="aclaracion">
-                        <img class="imagenAclaracion" src="Imagenes/bi_exclamation-circle-fill.png" alt="simboloExclamacion">
-                        <p class="textoAclaracion">Solo letras minúsculas y sin acentos</p>
-                    </div>
                 </form>
 
-                <div id="botones_EncDesenc">
+                <div class="aclaracion">
+                    <img class="imagenAclaracion" src="Imagenes/bi_exclamation-circle-fill.png" alt="simboloExclamacion">
+                    <p class="textoAclaracion">Solo letras minúsculas y sin acentos</p>
+                </div>
+                
+                <div class="botones_EncDesenc">
                     <button class="botonEncriptar">
                         <p class="textoBotonEncriptar">Encripta</p>
                     </button>
@@ -45,11 +50,12 @@
                 </div>
             </section>
 
-            <section>
+            <section class="sectionRight">
                 <div id="cuadroResultado">
                     
-                    <label for="texto_resultado"></label>
-                    <textarea name="texto_resultado" class="textoResultado" id="resultado" cols="30" rows="10" autocomplete="off" readonly></textarea>
+                    <div class="resultadoItem">
+                        <textarea name="texto_resultado" class="textoResultado" id="resultado" autocomplete="off" readonly></textarea>
+                    </div>
                     
                     <div id="imagenYtextoNoEncontrado">
                         <img class="imagenBusqueda" src="Imagenes/Muñeco.png" alt="Imagen de búsqueda">
@@ -59,10 +65,10 @@
                             <p class="texto2NoEncontrado">Ingrese  en el cuadro de la izquierda el texto que desee encriptar o desencriptar.</p>
                         </div>
                     </div>
-                    
+
                     <div>
                         <button class="botonCopiar">
-                           <p class="textoCotonCopiar">Copia el texto</p>
+                        <p>Copia el texto</p>
                         </button>
                     </div>
 
